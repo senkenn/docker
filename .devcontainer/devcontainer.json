@@ -6,5 +6,10 @@
 	"extensions": [
 		"ms-azuretools.vscode-docker",
 		"mhutchie.git-graph"
-	]
+	],
+	"features": {
+		"docker-in-docker": {
+      "version": "latest"
+    }
+	}
 }

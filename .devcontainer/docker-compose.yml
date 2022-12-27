@@ -3,6 +3,7 @@ services:
   docker:
     container_name: docker
     build: ./base
+    init: true
     tty: true
     volumes:
       - ../:/root

@@ -15,3 +15,20 @@ RUN echo \
   $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# install zsh
+RUN apt-get install -y zsh
+RUN zsh
+RUN sed -i.bak "s|$HOME:/bin/bash|$HOME:/usr/bin/zsh|" /etc/passwd
+
+# install zsh extension (prezto)
+RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
+RUN ln -s $HOME/.zprezto/runcoms/zlogin    $HOME/.zlogin \
+  && ln -s $HOME/.zprezto/runcoms/zlogout   $HOME/.zlogout \
+  && ln -s $HOME/.zprezto/runcoms/zpreztorc $HOME/.zpreztorc \
+  && ln -s $HOME/.zprezto/runcoms/zprofile  $HOME/.zprofile \
+  && ln -s $HOME/.zprezto/runcoms/zshenv    $HOME/.zshenv \
+  && ln -s $HOME/.zprezto/runcoms/zshrc     $HOME/.zshrc
+RUN echo "zstyle ':prezto:module:prompt' theme 'powerlevel10k'" >> $HOME/.zpreztorc
+COPY .p10k.zsh /root
+COPY .zshrc /root
