@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  docker:
+    container_name: docker
+    build: ./base
+    tty: true
+    volumes:
+      - ../:/root

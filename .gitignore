@@ -1,0 +1,4 @@
+.gitconfig
+.vscode-server/**
+.ssh/**
+.gnupg/**
