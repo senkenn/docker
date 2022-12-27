@@ -32,3 +32,11 @@ RUN ln -s $HOME/.zprezto/runcoms/zlogin    $HOME/.zlogin \
 RUN echo "zstyle ':prezto:module:prompt' theme 'powerlevel10k'" >> $HOME/.zpreztorc
 COPY .p10k.zsh /root
 COPY .zshrc /root
+
+# SSHの鍵を設定
+RUN mkdir $HOME/.ssh
+RUN echo 'Host github.com' >> $HOME/.ssh/config \
+  && echo '  HostName github.com' >> $HOME/.ssh/config \
+  && echo '  User git' >> $HOME/.ssh/config \
+  && echo '  IdentityFile ~/.ssh/id_rsa' >> $HOME/.ssh/config \
+  && echo '  IdentitiesOnly yes' >> $HOME/.ssh/config
