@@ -5,11 +5,13 @@
 	"workspaceFolder": "/root",
 	"extensions": [
 		"ms-azuretools.vscode-docker",
-		"mhutchie.git-graph"
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"dbaeumer.vscode-eslint",
+		"SENKEN.vscode-multi-line-uncomment",
+		"vivaxy.vscode-conventional-commits"
 	],
 	"features": {
-		"docker-in-docker": {
-      "version": "latest"
-    }
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	}
 }
