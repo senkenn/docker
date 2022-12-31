@@ -10,8 +10,8 @@
 		"dbaeumer.vscode-eslint",
 		"SENKEN.vscode-multi-line-uncomment",
 		"vivaxy.vscode-conventional-commits"
-	],
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	}
+	]
+	// "features": {
+	// 	"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	// }
 }

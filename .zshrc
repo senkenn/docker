@@ -15,3 +15,5 @@ alias d="docker"
 alias dc="docker compose"
 alias ll="ls -AlF"
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

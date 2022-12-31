@@ -1,6 +1,7 @@
-.gitconfig
 .*
 
 !.gitignore
+!.p10k.zsh
 !.devcontainer
-!.devcontainer/base/*
+!.zshrc
+!workspace
