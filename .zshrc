@@ -1,19 +1,13 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Powerlevel10k
+source $HOME/.p10k/powerlevel10k.zsh-theme
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# Customize to your needs...
+# Alias
+alias ls="ls -F --color=auto"
+alias ll="ls -Al"
 alias d="docker"
 alias dc="docker compose"
-alias ll="ls -AlF"
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+
+# Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"

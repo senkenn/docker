@@ -14,4 +14,7 @@ RUN ./aws/install && rm awscliv2.zip
 
 # zsh
 RUN zsh
-RUN sed -i.bak "s|$HOME:/bin/bash|$HOME:/usr/bin/zsh|" /etc/passwd
+RUN sed -i.bak "s|$HOME:/bin/bash|$HOME:/bin/zsh|" /etc/passwd
+
+# Powerlevel10k
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.p10k
