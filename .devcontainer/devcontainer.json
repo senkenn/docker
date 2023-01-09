@@ -1,8 +1,8 @@
 {
 	"name": "${localWorkspaceFolderBasename}",
 	"service": "ubuntu-root",
-	"dockerComposeFile": "docker-compose.yml",
-	"workspaceFolder": "/root",
+	"dockerComposeFile": "../docker-compose.yml",
+	"workspaceFolder": "/workspace",
 	"extensions": [
 		"ms-azuretools.vscode-docker",
 		"mhutchie.git-graph",

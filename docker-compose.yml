@@ -9,9 +9,9 @@ services:
     init: true
     tty: true
     volumes:
-      - ./workspace:/workspace
-      - .ssh:/root/.ssh
-      - .aws:/root/.aws
-      - .zshrc:/root/.zshrc
-      - .p10k.zsh:/root/.p10k.zsh
+      - ./:/workspace
+      - ./root/.ssh:/root/.ssh
+      - ./root/.aws:/root/.aws
+      - ./root/.zshrc:/root/.zshrc
+      - ./root/.p10k.zsh:/root/.p10k.zsh
       - /var/run/docker.sock:/var/run/docker.sock
