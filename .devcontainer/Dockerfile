@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+ARG WORKDIR
+
 RUN apt-get update && apt-get install -y \
   git \
   zip \
