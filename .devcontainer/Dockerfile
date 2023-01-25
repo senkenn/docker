@@ -27,6 +27,7 @@ RUN ln -s $HOME/.zprezto/runcoms/zlogin    $HOME/.zlogin \
   && ln -s $HOME/.zprezto/runcoms/zshenv    $HOME/.zshenv
 RUN echo "zstyle ':prezto:module:prompt' theme 'powerlevel10k'" >> $HOME/.zpreztorc
 
+RUN mkdir $HOME/.ssh
 RUN echo 'Host github.com' >> $HOME/.ssh/config \
   && echo '  HostName github.com' >> $HOME/.ssh/config \
   && echo '  User git' >> $HOME/.ssh/config \
