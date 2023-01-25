@@ -4,6 +4,7 @@ ARG WORKDIR
 
 RUN apt-get update && apt-get install -y \
   git \
+  vim \
   zip \
   curl \
   zsh \
@@ -17,8 +18,14 @@ WORKDIR $HOME
 RUN zsh
 RUN sed -i.bak "s|$HOME:/bin/bash|$HOME:/bin/zsh|" /etc/passwd
 
-# Powerlevel10k
-RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.p10k
+# install zsh extension (prezto)
+RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
+RUN ln -s $HOME/.zprezto/runcoms/zlogin    $HOME/.zlogin \
+  && ln -s $HOME/.zprezto/runcoms/zlogout   $HOME/.zlogout \
+  && ln -s $HOME/.zprezto/runcoms/zpreztorc $HOME/.zpreztorc \
+  && ln -s $HOME/.zprezto/runcoms/zprofile  $HOME/.zprofile \
+  && ln -s $HOME/.zprezto/runcoms/zshenv    $HOME/.zshenv
+RUN echo "zstyle ':prezto:module:prompt' theme 'powerlevel10k'" >> $HOME/.zpreztorc
 
 # Volta
 RUN curl https://get.volta.sh | bash
