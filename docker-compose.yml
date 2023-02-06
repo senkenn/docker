@@ -15,3 +15,5 @@ services:
       - ./root/.zshrc:/root/.zshrc
       - ./root/.p10k.zsh:/root/.p10k.zsh
       - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3999:3000
